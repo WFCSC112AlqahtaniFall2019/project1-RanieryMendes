@@ -22,7 +22,7 @@ int main() {
     srand(time(0));
 
     //Instructions to the user
-    cout << "Hello! Welcome to Battlefield! " << "Let's play!" << endl << "Please enter the position of the row and column you would like to mark on the board. They are both from 1 to 3. Enter each one at a time. " << endl << endl;
+    cout << "Hello! Welcome to Battlefield! " << "Let's play!" << endl << "You just need to enter the position of the row and column you would like to mark on the board. They are both from 1 to 3. Enter each one at a time. " << endl << endl;
 
 
      // initializing the vectors within the matrix
@@ -55,9 +55,24 @@ int main() {
 
      while (game) {
 
-
+          cout << "Please enter the row of the position  you would like to mark on the board. " << endl;
          cin >> rowUser;
+
+         while (rowUser < 1 || rowUser > 3 ) {
+
+             cout << "The row entered does not fit in the range of the matrix. Please insert another number. The row ranges from 1 to 3." << endl;
+             cin >> rowUser;
+         }
+
+         cout << "Please enter the column of the position  you would like to mark on the board. " << endl;
          cin >> columnUser;
+
+         while (columnUser < 1 || columnUser > 3 ) {
+
+             cout << "The column entered does not fit in the range of the matrix. Please insert another number. The column ranges from 1 to 3." << endl;
+             cin >> columnUser;
+         }
+
 
          rowUser = rowUser - 1;
          columnUser = columnUser - 1;
@@ -100,7 +115,7 @@ int main() {
 
              }
 
-             cout <<  "Please try again. Enter the position of the row and column you would like to mark on the board. They are from 1 to 3 " << endl << " " << endl;
+             cout <<  "Please try again!" << endl  ;
 
          }
 
